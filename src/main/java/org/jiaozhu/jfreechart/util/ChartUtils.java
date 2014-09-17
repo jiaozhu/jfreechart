@@ -39,10 +39,6 @@ import java.util.Vector;
  * 用来创建类别图表数据集、创建饼图数据集、时间序列图数据集<br>
  * 用来对柱状图、折线图、饼图、堆积柱状图、时间序列图的样式进行渲染<br>
  * 设置X-Y坐标轴样式
- * <p/>
- *
- * @author chenchangwen
- * @since:2014-2-18
  */
 public class ChartUtils {
     private static String NO_DATA_MSG = "数据加载失败";
@@ -172,11 +168,6 @@ public class ChartUtils {
 
     /**
      * 创建时间序列数据
-     *
-     * @param category   类别
-     * @param dateValues 日期-值 数组
-     *                   X坐标轴标题
-     * @return
      */
     public static TimeSeries createTimeseries(String category, Vector<Object[]> dateValues) {
         TimeSeries timeseries = new TimeSeries(category);
