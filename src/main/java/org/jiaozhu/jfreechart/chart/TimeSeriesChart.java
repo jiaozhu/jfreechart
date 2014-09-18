@@ -35,6 +35,24 @@ public class TimeSeriesChart {
     public TimeSeriesChart() {
     }
 
+    public static void main(String[] args) {
+        final JFrame frame = new JFrame();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(1024, 420);
+        frame.setLocationRelativeTo(null);
+
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                // 创建图形
+                ChartPanel chartPanel = new TimeSeriesChart().createChart();
+                frame.getContentPane().add(chartPanel);
+                frame.setVisible(true);
+            }
+        });
+
+    }
+
     /**
      * 创建数据集合
      *
@@ -91,24 +109,6 @@ public class TimeSeriesChart {
         // 6:使用chartPanel接收
         ChartPanel chartPanel = new ChartPanel(chart);
         return chartPanel;
-    }
-
-    public static void main(String[] args) {
-        final JFrame frame = new JFrame();
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(1024, 420);
-        frame.setLocationRelativeTo(null);
-
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                // 创建图形
-                ChartPanel chartPanel = new TimeSeriesChart().createChart();
-                frame.getContentPane().add(chartPanel);
-                frame.setVisible(true);
-            }
-        });
-
     }
 
 }

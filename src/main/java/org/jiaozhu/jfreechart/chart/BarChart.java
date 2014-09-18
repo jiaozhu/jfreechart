@@ -30,6 +30,24 @@ public class BarChart {
     public BarChart() {
     }
 
+    public static void main(String[] args) {
+        final JFrame frame = new JFrame();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(1024, 420);
+        frame.setLocationRelativeTo(null);
+
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                // 创建图形
+                ChartPanel chartPanel = new BarChart().createChart();
+                frame.getContentPane().add(chartPanel);
+                frame.setVisible(true);
+            }
+        });
+
+    }
+
     public DefaultCategoryDataset createDataset() {
         // 标注类别
         String[] categories = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
@@ -59,24 +77,6 @@ public class BarChart {
         // 6:使用chartPanel接收
         ChartPanel chartPanel = new ChartPanel(chart);
         return chartPanel;
-    }
-
-    public static void main(String[] args) {
-        final JFrame frame = new JFrame();
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(1024, 420);
-        frame.setLocationRelativeTo(null);
-
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                // 创建图形
-                ChartPanel chartPanel = new BarChart().createChart();
-                frame.getContentPane().add(chartPanel);
-                frame.setVisible(true);
-            }
-        });
-
     }
 
 }

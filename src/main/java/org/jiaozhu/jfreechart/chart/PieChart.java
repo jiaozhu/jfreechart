@@ -29,6 +29,24 @@ public class PieChart {
     public PieChart() {
     }
 
+    public static void main(String[] args) {
+        final JFrame frame = new JFrame();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(1024, 420);
+        frame.setLocationRelativeTo(null);
+
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                // 创建图形
+                ChartPanel chartPanel = new PieChart().createChart();
+                frame.getContentPane().add(chartPanel);
+                frame.setVisible(true);
+            }
+        });
+
+    }
+
     public DefaultPieDataset createDataset() {
         String[] categories = {"Bananas", "Kiwi", "Mixed nuts", "Oranges", "Apples", "Pears", "Clementines", "Reddish (bag)", "Grapes (bunch)",};
         Object[] datas = {8, 3, 1, 6, 8, 4, 4, 1, 1};
@@ -55,24 +73,6 @@ public class PieChart {
         // 6:使用chartPanel接收
         ChartPanel chartPanel = new ChartPanel(chart);
         return chartPanel;
-    }
-
-    public static void main(String[] args) {
-        final JFrame frame = new JFrame();
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(1024, 420);
-        frame.setLocationRelativeTo(null);
-
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                // 创建图形
-                ChartPanel chartPanel = new PieChart().createChart();
-                frame.getContentPane().add(chartPanel);
-                frame.setVisible(true);
-            }
-        });
-
     }
 
 }

@@ -39,6 +39,24 @@ public class DualaxisChart {
     public DualaxisChart() {
     }
 
+    public static void main(String[] args) {
+        final JFrame frame = new JFrame();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(1024, 420);
+        frame.setLocationRelativeTo(null);
+
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                // 创建图形
+                ChartPanel chartPanel = new DualaxisChart().createChart();
+                frame.getContentPane().add(chartPanel);
+                frame.setVisible(true);
+            }
+        });
+
+    }
+
     public ChartPanel createChart() {
         String[] categories = {"1999-12-31", "2000-12-31", "2001-12-31", "2002-12-31", "2003-12-31", "2004-12-31", "2005-12-31", "2006-12-31", "2007-12-31",
                 "2008-12-31", "2009-12-31", "2010-12-31", "2011-12-31", "2012-12-31", "2013-12-31"};
@@ -90,24 +108,6 @@ public class DualaxisChart {
         chart.getLegend().setFrame(new BlockBorder(Color.WHITE));
         ChartPanel chartPanel = new ChartPanel(chart);
         return chartPanel;
-    }
-
-    public static void main(String[] args) {
-        final JFrame frame = new JFrame();
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(1024, 420);
-        frame.setLocationRelativeTo(null);
-
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                // 创建图形
-                ChartPanel chartPanel = new DualaxisChart().createChart();
-                frame.getContentPane().add(chartPanel);
-                frame.setVisible(true);
-            }
-        });
-
     }
 
 }
