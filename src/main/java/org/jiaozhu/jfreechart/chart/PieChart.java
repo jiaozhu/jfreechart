@@ -12,27 +12,26 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- *
- * @author ccw
+ * @author jiaozhu
  * @date 2014-6-11
- *       <p>
- *       创建图表步骤：<br/>
- *       1：创建数据集合<br/>
- *       2：创建Chart：<br/>
- *       3:设置抗锯齿，防止字体显示不清楚<br/>
- *       4:对柱子进行渲染，<br/>
- *       5:对其他部分进行渲染<br/>
- *       6:使用chartPanel接收<br/>
- *
- *       </p>
+ * <p>
+ * 创建图表步骤：<br/>
+ * 1：创建数据集合<br/>
+ * 2：创建Chart：<br/>
+ * 3:设置抗锯齿，防止字体显示不清楚<br/>
+ * 4:对柱子进行渲染，<br/>
+ * 5:对其他部分进行渲染<br/>
+ * 6:使用chartPanel接收<br/>
+ * <p/>
+ * </p>
  */
 public class PieChart {
     public PieChart() {
     }
 
     public DefaultPieDataset createDataset() {
-        String[] categories = { "Bananas", "Kiwi", "Mixed nuts", "Oranges", "Apples", "Pears", "Clementines", "Reddish (bag)", "Grapes (bunch)", };
-        Object[] datas = { 8, 3, 1, 6, 8, 4, 4, 1, 1 };
+        String[] categories = {"Bananas", "Kiwi", "Mixed nuts", "Oranges", "Apples", "Pears", "Clementines", "Reddish (bag)", "Grapes (bunch)",};
+        Object[] datas = {8, 3, 1, 6, 8, 4, 4, 1, 1};
         DefaultPieDataset dataset = ChartUtils.createDefaultPieDataset(categories, datas);
         return dataset;
     }

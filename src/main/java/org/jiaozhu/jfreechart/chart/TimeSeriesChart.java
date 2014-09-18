@@ -18,19 +18,18 @@ import java.util.Random;
 import java.util.Vector;
 
 /**
- *
- * @author ccw
+ * @author jiaozhu
  * @date 2014-6-11
- *       <p>
- *       创建图表步骤：<br/>
- *       1：创建数据集合<br/>
- *       2：创建Chart：<br/>
- *       3:设置抗锯齿，防止字体显示不清楚<br/>
- *       4:对柱子进行渲染，<br/>
- *       5:对其他部分进行渲染<br/>
- *       6:使用chartPanel接收<br/>
- *
- *       </p>
+ * <p>
+ * 创建图表步骤：<br/>
+ * 1：创建数据集合<br/>
+ * 2：创建Chart：<br/>
+ * 3:设置抗锯齿，防止字体显示不清楚<br/>
+ * 4:对柱子进行渲染，<br/>
+ * 5:对其他部分进行渲染<br/>
+ * 6:使用chartPanel接收<br/>
+ * <p/>
+ * </p>
  */
 public class TimeSeriesChart {
     public TimeSeriesChart() {
@@ -43,7 +42,7 @@ public class TimeSeriesChart {
      */
     public TimeSeriesCollection createDataset() {
         TimeSeriesCollection dataset = new TimeSeriesCollection();
-        String[] categories = { "股东总户数", "前十名持股比例" };
+        String[] categories = {"股东总户数", "前十名持股比例"};
 
         Random random = new Random();
         for (int row = 0; row < categories.length; row++) {
@@ -51,7 +50,7 @@ public class TimeSeriesChart {
             for (int i = 0; i < 20; i++) {
                 String date = (2000 + i) + "-0" + i + "-21";
                 System.out.println(date);
-                Object[] dateValue = { date, random.nextInt(10) };
+                Object[] dateValue = {date, random.nextInt(10)};
                 dateValues.add(dateValue);
 
             }
