@@ -1,7 +1,7 @@
-jfreechart图表改造示例
-==========
+# jfreechart图表改造示例
 
-原帖地址在这里：http://my.oschina.net/abian/blog/278448     
+
+>原帖地址在这里：http://my.oschina.net/abian/blog/278448     
 
 ## 使用界面
 
